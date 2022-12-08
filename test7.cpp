@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 	createTrackbar("Val Max", "Trackbars", &vmax, 255);
 	while (true)
 	{
-		Scalar lower(hmin, smin, vmin);//色相 饱和度 value
+		Scalar lower(hmin, smin, vmin);//色度 饱和度 亮度 HSV模型
 		Scalar upper(hmax, smax, vmax);
 		inRange(imgHSV, lower, upper, mask);
 		imshow("Image", img);
