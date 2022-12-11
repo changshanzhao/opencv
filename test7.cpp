@@ -10,7 +10,7 @@ int hmin = 0, smin = 0, vmin = 0;
 int hmax = 255, smax = 255, vmax = 255;
 int main(int argc, char* argv[])
 {
-	string path = "Resources/6.jpg";
+	string path = "Resources/OK品.bmp";
 	Mat img = imread(path);
 	Mat imgHSV,mask;
 	cvtColor(img, imgHSV, COLOR_BGR2HSV);
@@ -19,8 +19,8 @@ int main(int argc, char* argv[])
 	createTrackbar("Hue Max", "Trackbars", &hmax, 179);
 	createTrackbar("Sat Min", "Trackbars", &smin, 255);
 	createTrackbar("Sat Max", "Trackbars", &smax, 255);
-	createTrackbar("Val Min", "Trackbars", &vmin, 255);
-	createTrackbar("Val Max", "Trackbars", &vmax, 255);
+	createTrackbar("Val Min", "Trackbars", &vmin, 255);//23
+	createTrackbar("Val Max", "Trackbars", &vmax, 255);//33
 	while (true)
 	{
 		Scalar lower(hmin, smin, vmin);//色度 饱和度 亮度 HSV模型

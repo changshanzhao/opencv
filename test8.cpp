@@ -23,7 +23,7 @@ void getContours(Mat imgDil,Mat img)
 		{
 			
 			float peri = arcLength(contours[i], true);//弧长
-			approxPolyDP(contours[i], conPoly[i], 0.02 * peri, true);//多边形逼近，具体百度
+			approxPolyDP(contours[i], conPoly[i], 0.02 * peri, false);//多边形逼近，具体百度
 			
 			cout<<conPoly[i].size()<<endl;//点的个数可能反应了形状的类型
 			boundRect[i] = boundingRect(conPoly[i]);
@@ -52,7 +52,7 @@ void getContours(Mat imgDil,Mat img)
 }
 int main(int argc, char* argv[])
 {
-	string path = "Resources/10.png";
+	string path = "Resources/OK.bmp";
 	Mat img = imread(path);
 	cvtColor(img, imgGray, COLOR_BGR2GRAY);
 	GaussianBlur(img, imgBlur, Size(3, 3), 3, 0);
