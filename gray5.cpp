@@ -57,8 +57,8 @@ Mat gray(Mat img)
 }
 int main(int argc, char* argv[])
 {
-	string path = "Resources/3.mp4";//640 480
-	VideoCapture cap(path);
+	string path = "Resources/1.mp4";//640 480
+	VideoCapture cap(0);
 	Mat frame;
 	while (true)
 	{
@@ -71,7 +71,8 @@ int main(int argc, char* argv[])
 		cvtColor(frame, img, COLOR_BGR2GRAY);
 		Mat imggray = gray(img);
 		imshow("video", imggray);
-		waitKey(1000 / cap.get(CAP_PROP_FPS));
+		//waitKey(1000 / cap.get(CAP_PROP_FPS));
+		waitKey(1);
 	}
 	return 0;
 }

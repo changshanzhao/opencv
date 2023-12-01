@@ -6,11 +6,11 @@
 using namespace cv;
 using namespace std;
 //颜色检测
-int hmin = 0, smin = 0, vmin = 0;
-int hmax = 255, smax = 255, vmax = 255;
+int hmin = 179, smin = 255, vmin = 255;
+int hmax = 179, smax = 255, vmax = 255;
 int main(int argc, char* argv[])
 {
-	string path = "Resources/OK品.bmp";
+	string path = "Resources/ict2.png";
 	Mat img = imread(path);
 	Mat imgHSV,mask;
 	cvtColor(img, imgHSV, COLOR_BGR2HSV);
@@ -21,15 +21,18 @@ int main(int argc, char* argv[])
 	createTrackbar("Sat Max", "Trackbars", &smax, 255);
 	createTrackbar("Val Min", "Trackbars", &vmin, 255);//23
 	createTrackbar("Val Max", "Trackbars", &vmax, 255);//33
+	namedWindow("ImageHSV", WINDOW_NORMAL);
+	namedWindow("Image", WINDOW_NORMAL);
+	namedWindow("mask", WINDOW_NORMAL);
 	while (true)
 	{
 		Scalar lower(hmin, smin, vmin);//色度 饱和度 亮度 HSV模型
 		Scalar upper(hmax, smax, vmax);
 		inRange(imgHSV, lower, upper, mask);
-		imshow("Image", img);
 		imshow("ImageHSV", imgHSV);
+		imshow("Image", img);
 		imshow("mask", mask);
-		waitKey(1);
+		waitKey(0);
 	}
 	
 	return 0;

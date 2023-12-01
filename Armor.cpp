@@ -5,22 +5,11 @@
 #include <iostream>
 using namespace cv;
 using namespace std;
-/*
 int main(int argc, char* argv[])
 {
-	string path = "Resources/1.jpg";
-	Mat img = imread(path);
-	imshow("Image", img);
-	waitKey(0);
-	return 0;
-}
-*/
-int main(int argc, char* argv[])
-{
-	string path = "C:/Users/Lenovo/Desktop/CUMCM2023Problems/A题/思路.mp4";
+	string path = "Resources/3.mp4";
 	VideoCapture cap(path);
 	Mat frame;
-	int i = 0;
 	while (true)
 	{
 		cap >> frame;
@@ -29,9 +18,7 @@ int main(int argc, char* argv[])
 			break;
 		}
 		imshow("video", frame);
-		imwrite("C:/Users/Lenovo/Desktop/CUMCM2023Problems/A题/截图/" + to_string(i) + ".jpg", frame);
-		waitKey(20);
-		i++;
+		waitKey(1000 / cap.get(CAP_PROP_FPS));
 	}
 	return 0;
 }

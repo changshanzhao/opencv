@@ -116,7 +116,7 @@ void getContours2(Mat imgDil, Mat img)
 }
 int main()
 {
-	string path = "Resources/OK品.bmp";
+	string path = "Resources/OK.bmp";
 	Mat img = imread(path);
 	cvtColor(img, imgHSV, COLOR_BGR2HSV);
 	Scalar lower(hmin, smin, vmin);//色度 饱和度 亮度 HSV模型

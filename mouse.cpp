@@ -7,7 +7,7 @@ Point prePoint;
 void mouse(int event, int x, int y, int flags, void*);
 int main()
 {
-	string path = "Resources/10.png";
+	string path = "Resources/B1.jpg";
 	img = imread(path);
 	if (!img.data)
 	{

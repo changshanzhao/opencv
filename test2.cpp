@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	imshow("Image Blur", imgBlur);
 	imshow("Image Canny", imgCanny);
 	imshow("Image Dilation", imgDil);//dilation 膨胀
-	imshow("Image Erode", imgErode);//Erode 腐蚀风化
+	imshow("Image Erode", imgErode);//Erode 风化
 	waitKey(0);
 	
 
